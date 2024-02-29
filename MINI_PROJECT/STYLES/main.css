@@ -1,0 +1,65 @@
+* {
+    margin: 0px;
+    outline: none;
+}
+
+header {
+    position: relative;
+    display: flex;
+}
+
+.navbar {
+    display: flex;
+    margin: 20px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    font-size: x-large;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 3%;
+}
+
+.logo img {
+    height: 30px;
+}
+
+.search input {
+    height: 30px;
+    width: 500px;
+    border: none;
+    font-size: 1rem;
+    border-radius: 10px;
+    background-color: rgba(171, 167, 167, 0.221);
+    position: relative;
+    right: 15%;
+}
+
+
+.nav{
+    position: absolute;
+    right: 10%;
+}
+
+ul {
+    display: flex;
+    font-size: small;
+}
+
+ul li {
+    list-style: none;
+    margin: 0px 10px;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    background-color: aqua;
+    /* cursor: pointer; */
+}
