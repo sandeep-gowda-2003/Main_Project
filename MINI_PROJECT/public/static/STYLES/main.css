@@ -1,0 +1,33 @@
+.container{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top_panel{
+    width: 1500px;
+    display:flex;
+    overflow-x: scroll;
+}
+
+.scroll{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 30px;
+    display: flex;
+    flex: none;
+    margin-right: 30px;
+    
+}
+.scroll img{
+    width: 100%;
+}
+.top_panel::-webkit-scrollbar{
+    display: none;
+}
+
+.container>img{
+    height: 200px;
+}
