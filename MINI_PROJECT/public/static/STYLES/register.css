@@ -29,7 +29,7 @@ input[type="email"] {
     box-sizing: border-box;
 }
 
-button {
+#register_button {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -40,14 +40,16 @@ button {
     width: 100%;
 }
 
-button:hover {
+#register_button:hover {
     background-color: #45a049;
 }
 
 .input-group {
+    margin-top: 30px;
     margin-bottom: 15px;
 }
 
 .message {
     text-align: center;
 }
+

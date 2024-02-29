@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopper's Stop - Login</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="/STYLES/login.css">
 </head>
 <body>
+    <%- include('../views/basic_template.ejs') -%>
     <div class="container">
         <form id="loginForm">
             <div class="logo-container">
-                <img src="../img/logo.png" alt="Shopper's Stop Logo" class="logo">
+                <img src="/images/logo.png" alt="Shopper's Stop Logo" class="logos">
             </div>
             <h2>Login to Shopper's Stop</h2>
+            <hr>
             <div class="input-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -21,8 +23,8 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit">Login</button>
-            <p class="message">Not registered? <a href="register.html">Create an account</a></p>
+            <button id="login_button" type="submit">Login</button>
+            <p class="message">Not registered? <a href="/register">Create an account</a></p>
         </form>
     </div>
 

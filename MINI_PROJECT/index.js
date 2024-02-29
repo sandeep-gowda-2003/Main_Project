@@ -13,4 +13,12 @@ app.get('/',(req,resp)=>{
     resp.render('home.ejs')
 })
 
+app.get('/login',(req,resp)=>{
+    resp.render('login.ejs')
+})
+
+app.get('/register',(req,resp)=>{
+    resp.render('register.ejs')
+})
+
 app.listen(8000);
