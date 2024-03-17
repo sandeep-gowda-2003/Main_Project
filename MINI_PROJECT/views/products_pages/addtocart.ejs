@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Simple E-commerce</title>
+    <link rel="stylesheet" href="STYLES/addtocart.css">
+</head>
+
+<body>
+    <%- include('../template_pages/basic_template_user.ejs') -%>
+        <main>
+            <div class="checkout-container">
+                <h2>Order Summary</h2>
+                <div class="order-summary">
+                    <%result.forEach(function(item) {%>
+                        <div class="product">
+                            <div class="product-image">
+                                <img src="images/<%=item.image%>" alt="Product 1">
+                            </div>
+                            <div class="product-details">
+                                <h3>
+                                    <%=item.name%>
+                                </h3>
+                                <p>
+                                    <%=item.description%>
+                                </p>
+                                <span class="price"><span>&#8377</span>
+                                    <%=item.sale_price%>
+                                </span>
+                            </div>
+                            <div class="r_button">
+                                <form action="/remove_product" method="post">
+                                    <!-- <input type="hidden" name="product[]" value="Product 2"> -->
+                                    <input type="hidden" name="product_id" value="<%=item.product_id%>>">
+                                    <input type="submit" class="removeproduct" value="Remove">
+                                </form>
+                            </div>
+                        </div>
+                        <%})%>
+                </div>
+                <div class="total">
+                    <h3>Total:</h3>
+                    <span class="total_amount">&#8377<span>
+                            <%=sum%>
+                        </span></span> <!-- Total price for Product 1 and Product 2 -->
+                </div>
+                <form action="/checkout" method="post">
+                    <div class="checkout-btn-container">
+                        <input type="hidden" name="item" value="<%=result%>">
+                        <input type="hidden" value="<%=sum%>">
+                        <button type="submit" class="checkout-btn">Proceed to Checkout</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <%-include('../template_pages/footer.ejs')-%>
+</body>
+<script>
+    window.onload = function () {
+        var prices = document.getElementsByClassName('price');
+        var totalPrice = 0;
+
+        for (var i = 0; i < prices.length; i++) {
+            totalPrice += parseFloat(prices[i].textContent.replace('$', ''));
+        }
+
+        document.querySelector('.total-price').textContent = '$' + totalPrice.toFixed(2);
+    };
+</script>
+
+</html>

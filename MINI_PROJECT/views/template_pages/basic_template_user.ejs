@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="/STYLES/basic_temp_user.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="logo">
+                <a href="/user">
+                    <img src="/images/site_requirred/logo.png" alt="logo">
+                    <span style="color: black;">SHOPPERS'</span><span style="color: red;">STOP</span>
+                </a>
+            </div>
+            <div class="search">
+                <form action="/search_bar" method="post">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <input type="search" name="SearchBar" autocomplete="on" placeholder="search for products">
+                </form>
+            </div>
+            <div class="nav">
+                <ul class="list">
+                    <li id="login"><a href="#"><i class="fa-regular fa-circle-user"></i>Account<i
+                                class="fa-solid fa-caret-down"></i></a>
+                        <div class="dropdown-log">
+                            <div class="dropdown-content-log">
+                                <a href="/profile">PROFILE</a>
+                                <a href="/account">ACCOUNT SETTINGS</a>
+                                <a href="/logout">LOGOUT</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="cart"><a href="/cart"><i class="fa-solid fa-cart-shopping"></i>Cart</a></li>
+                    <li id="seller"><a href="/seller_signin"><i class="fa-solid fa-store"></i>Become a seller</a></li>
+                    <i id="menu" onclick="menu_pop()" class="fa-solid fa-ellipsis-vertical"></i>
+                    <div class="menu-dropdown">
+                        <a href="/profile">Profile</a>
+                        <a href="/register">Account Settings</a>
+                        <a href="/support">Support</a>
+                        <a href="/aboutus">about us</a>
+                    </div>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // var menu=document.getElementById('menu')
+        // menu_drop.style.display='none';
+        // // menu.style.display='none';
+        // menu.addEventListener('click',(event)=>{
+        //     menu_drop.style.display='block';
+        //     menu.addEventListener('click',(eve)=>{
+        //         menu_drop.style.display='none';
+        //     })
+        // })
+
+        function menu_pop() {
+            var menu_drop = document.querySelector('.menu-dropdown')
+            if (menu_drop.style.display == 'none') {
+                menu_drop.style.display = 'block'
+            }
+            else {
+
+                menu_drop.style.display = 'none'
+            }
+
+        }
+    </script>
+</body>
+
+</html>

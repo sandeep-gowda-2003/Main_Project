@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Product Page Design</title>
+    <link rel="stylesheet" href="STYLES/one_product.css">
+</head>
+<body>
+    <%- include('../template_pages/basic_template_one.ejs') -%>
+    <section class="main-wrap">
+        <div class="product">
+            <div class="image-gallery">
+                <img src="images/<%=result.image%>" id="productImg" alt="">
+            </div>
+            <div class="product-details">
+                <div class="details">
+                    <h2><%=result.name%></h2>
+                    <h3>₹<span><%=result.sale_price%></span></h3>
+                    <h4><%= Math.floor(100-((result.sale_price/result.price)*100))%><span>% off</span></h4>
+                    <p><%=result.description%></p>
+                </div>
+                <div class="sizes">
+                    <form class="form">
+                        <div class="select-size">
+                            <h3>Size:</h3>
+                            <label for="sm">
+                                <input type="radio" name="size" id="sm">
+                                <span>S</span>
+                            </label>
+                            <label for="m">
+                                <input type="radio" name="size" id="m">
+                                <span>M</span>
+                            </label>
+                            <label for="lg">
+                                <input type="radio" name="size" id="lg">
+                                <span>L</span>
+                            </label>
+                            <label for="xl">
+                                <input type="radio" name="size" id="xl">
+                                <span>XL</span>
+                            </label>
+                            <label for="xxl">
+                                <input type="radio" name="size" id="xxl">
+                                <span>XXL</span>
+                            </label>
+                        </div>   
+                    </form>
+                </div>
+                <div class="colors">
+                    <form class="form">
+                        <div class="select-color">
+                            <h3>Color:</h3>
+                            <label for="red">
+                                <input type="radio" name="color" id="red">
+                                <span class="color-1"></span>
+                            </label>
+                            <label for="green">
+                                <input type="radio" name="color" id="green">
+                                <span class="color-2"></span>
+                            </label>
+                            <label for="blue">
+                                <input type="radio" name="color" id="blue">
+                                <span class="color-3"></span>
+                            </label>
+                            <label for="yellow">
+                                <input type="radio" name="color" id="yellow">
+                                <span class="color-4"></span>
+                            </label>
+                        </div>   
+                    </form>
+                </div>
+                <div class="quantity">
+                    <div class="select-quantity">
+                        <h3>Quantity:</h3>
+                        <input type="number" name="quantity" value="1">
+                    </div>
+                </div>
+                <form action="/pay" method="post">
+                <div class="sub-btn">
+                    <input type="hidden" name='id' value="<%=result.product_id%>">
+                    <input type="hidden" name='price' value="<%=result.sale_price%>">
+                    <button type="submit" class="submit">Buy Now</button>
+                </div>
+            </form>
+            </div>
+        </div>
+
+    </section>
+    
+    <%-include('../template_pages/footer.ejs')-%>
+
+</body>
+</html>

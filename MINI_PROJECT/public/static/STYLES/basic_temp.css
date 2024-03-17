@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     outline: none;
+    box-sizing: border-box;
 }
 
 header {
@@ -16,7 +17,7 @@ header {
 }
 
 .logo a{
-    font-size: x-large;
+    font-size: 2rem;
     font-weight: bolder;
     display: flex;
     align-items: center;
@@ -26,10 +27,10 @@ header {
 }
 
 .logo img {
-    height: 30px;
+    height: 5rem;
 }
 .search{
-    width: 40%;
+    width: 55%;
     margin-left: 5%;
     
 }
@@ -40,7 +41,7 @@ header {
 }
 
 .search input {
-    height: 40px;
+    height: 40px;   
     width: 90%;
     border: none;
     font-size: 1rem;
@@ -51,7 +52,7 @@ header {
     padding: 0%;
 }
 button{
-    height: 40px;
+    height: 2.5rem;
     width: auto;
     border: none;
     border-radius: 10px 0 0 10px ;
@@ -59,7 +60,7 @@ button{
 }
 
 .nav{
-    width: 30%;
+    width: 10%;
 }
 
 ul {
@@ -72,13 +73,13 @@ ul {
 
 
 li a {      
-    font-size: 18px;
+    font-size: 1rem;
     text-decoration: none;
     color: black;
     display: inline-block;
 }
 
-ul li {
+.list li {
     list-style: none;
     margin: 0px 20px;
     /* margin-left: 30px; */
@@ -91,7 +92,7 @@ i{
     padding: 10px;
 }
 
-ul li:hover{
+.list li:hover{
     background-color: rgba(53, 53, 148, 0.627);
 }
 
@@ -100,3 +101,51 @@ ul li:hover{
     border-radius: 15px;
 }
 #cart:hover */
+
+
+
+/* Dropdown styles */
+/* .dropdown-log{
+} */
+.dropdown-content-log {
+    display: none;
+    /* width: 50px; */
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 2;
+    top: 8%; /* Position dropdown below parent */
+    right: 4.5%; /* Center dropdown horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+}
+
+.dropdown-content-log a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content-log a:hover {
+    background-color: #f2f2f2;
+}
+
+/* Show dropdown on hover */
+.list li:hover .dropdown-content-log {
+    display: block;
+}
+
+
+/* Responsive styling */
+/* @media only screen and (max-width: 768px) {
+    .topProductNavbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .topProductNavbar_Nav {
+        flex: 1 0 calc(50% - 40px);
+        margin: 10px;
+    }
+} */

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="STYLES/my_profile.css">
+</head>
+<body>
+    <%- include('../template_pages/basic_template_user.ejs') -%>
+    <header>
+        <h>Welcome to Your Profile</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#" class="nav-link">My Orders</a></li>
+          <li><a href="/account_settings" class="nav-link">Account Settings</a></li>
+          <li><a href="#" class="nav-link">Logout</a></li>
+        </ul>
+      </nav>
+      <main>
+        <section class="profile-info">
+          <h2>Personal Information</h2>
+          <div class="info-item">
+            <label for="fullname">Full Name:</label>
+            <span id="fullname"><%=user.name%></span>
+          </div>
+          <div class="info-item">
+            <label for="email">Email:</label>
+            <span id="email"><%=user.email%></span>
+          </div>
+          <div class="info-item">
+            <label for="address">Mobile NO:</label>
+            <span id="address"><%=user.mobile_no%></span>
+          </div>
+        </section>
+      </main>
+      
+      <%-include('../template_pages/footer.ejs')-%>
+</body>
+</html>
