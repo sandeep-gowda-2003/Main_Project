@@ -898,6 +898,7 @@ app.post('/seller_signup', (req, resp) => {
 // ADDING ITEMS TO CART USING POST METHOD
 
 app.post('/add_to_cart', (req, resp) => {
+    if(isAuthenticated(req)){
     console.log("In", req.session.user.id, 'item', req.body.item_id)
     function Productalreadyadded(cart, item_id) {
         var c = 0;
@@ -970,6 +971,10 @@ app.post('/add_to_cart', (req, resp) => {
     else {
         resp.redirect('/login')
     }
+}
+else{
+resp.redirect('/login')
+}
 })
 
 
@@ -1047,7 +1052,7 @@ const salt_key_index = 1
 const salt_key = "099eb0cd-02cf-4e2a-8aca-3e6c6aff0399"
 let session_tempo
 
-// test payment details
+// test payment detail
 // “card_number”: “4208585190116667”,
 // “card_type”: “CREDIT_CARD”,
 // “card_issuer”: “VISA”,
@@ -1341,4 +1346,4 @@ app.post('/account_change_setting',(req,resp)=>{
 })
 
 
-app.listen(port = 8000, host = '0.0.0.0')
+app.listen(port = 7000, host = '0.0.0.0')

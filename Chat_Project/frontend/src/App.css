@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@300&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.App{
+    min-height: 100vh;
+    display: flex;
+    background-image: url("../public/eagle.png");
+    /* background-image: url("../public/pigeon_message.png"); */
+    background-color: rgba(96, 130, 130, 0.652);
+    background-repeat: no-repeat;
+    background-position: 1%,95%;
+    background-size: 35%,33%;
+}
